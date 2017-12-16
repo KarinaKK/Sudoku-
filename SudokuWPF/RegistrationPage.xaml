@@ -1,0 +1,35 @@
+﻿<Page x:Class="SudokuWPF.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SudokuWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="RegistrationPage">
+
+    <Grid Margin="0,0,0,57">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.RowSpan="3" Content="Регистрация" HorizontalAlignment="Center" FontSize="24"></Label>
+        <Label Content="Никнейм" HorizontalAlignment="Left" Grid.Row="3" Margin="10,0,0,0"/>
+        <Label Content="Пароль" Grid.Row="6"/>
+        <Label Content="Подтвердите пароль" Grid.Row="8"></Label>
+        <TextBox Name="TextboxLogin" Grid.Row="4"/>
+        <PasswordBox Name="TextboxPassword" Grid.Row="7"/>
+        <PasswordBox Name="TextboxPasswordConfirm" Grid.Row="9"/>
+        <Button Name="ButtonReg" Content="Регистрация" Click="ButtonBase_OnClick" Grid.Row="9" Margin="0,54,20,-49" HorizontalAlignment="Right" Width="80"/>
+
+    </Grid>
+</Page>

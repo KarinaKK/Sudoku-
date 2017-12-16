@@ -1,0 +1,39 @@
+﻿<Window x:Class="SudokuWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SudokuWPF"
+        mc:Ignorable="d"
+        Title="Sudoku" Height="550" Width="725" >
+    <Window.DataContext>
+        <local:SudokuModel></local:SudokuModel>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*"></ColumnDefinition>
+            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="1" Content="Вход и регистрация"  Width="200" Height="27" Margin="0,39,10,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <Expander Grid.Row="0" Grid.Column="1" Visibility="Hidden" Header="Никнейм" HorizontalAlignment="Left" Height="78" Margin="247,42,0,10" >
+            <Grid Background="#FFE5E5E5">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="1" Content="Выйти"></Label>
+                <Label Grid.Row="0" Content="Сменить пароль"></Label>
+            </Grid>
+        </Expander>
+        <Button Grid.Row="3" Grid.Column="1"  Content="Выход" Margin="0,0,60,30" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="145"/>
+        <Button Content="Новая игра" Grid.Row="1" Grid.Column="1" Margin="0,0,60,24" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="145" />
+        <Button Content="Настройки" Grid.Row="2" Margin="0,0,60,31" Grid.Column="1" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="145" />
+        <Frame Name="MainFrame" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3"></Frame>
+    </Grid>
+</Window>
