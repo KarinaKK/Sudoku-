@@ -4,17 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище SudokuUsersModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище SudokuUsersModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Games">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
-          <Property Name="DateFinish" Type="datetime" Nullable="false" />
-          <Property Name="Duration" Type="int" />
+          <Property Name="FinishTime" Type="datetime" Nullable="false" />
+          <Property Name="Duration" Type="int" Nullable="false" />
           <Property Name="Level" Type="int" Nullable="false" />
-          <Property Name="Mistakes" Type="real" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -22,7 +21,7 @@
           </Key>
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <Association Name="FK_Games_ToUsers">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
@@ -44,35 +43,33 @@
             <End Role="Games" EntitySet="Games" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SudokuUsersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Games">
+        <EntityType Name="Game">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
-          <Property Name="DateFinish" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Duration" Type="Int32" />
+          <Property Name="FinishTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Duration" Type="Int32" Nullable="false" />
           <Property Name="Level" Type="Int32" Nullable="false" />
-          <Property Name="Mistakes" Type="Single" />
-          <NavigationProperty Name="Users" Relationship="Self.FK_Games_ToUsers" FromRole="Games" ToRole="Users" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Games_ToUsers" FromRole="Games" ToRole="Users" />
         </EntityType>
-        <EntityType Name="Users">
+        <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserId" />
           </Key>
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Games" Relationship="Self.FK_Games_ToUsers" FromRole="Users" ToRole="Games" />
         </EntityType>
         <Association Name="FK_Games_ToUsers">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="Games" Type="Self.Games" Multiplicity="*" />
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Games" Type="Self.Game" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -83,8 +80,8 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SudokuUsersEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Games" EntityType="Self.Games" />
-          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="Games" EntityType="Self.Game" />
+          <EntitySet Name="Users" EntityType="Self.User" />
           <AssociationSet Name="FK_Games_ToUsers" Association="Self.FK_Games_ToUsers">
             <End Role="Users" EntitySet="Users" />
             <End Role="Games" EntitySet="Games" />
@@ -97,19 +94,18 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище SudokuUsersModelContainer" CdmEntityContainer="SudokuUsersEntities">
           <EntitySetMapping Name="Games">
-            <EntityTypeMapping TypeName="SudokuUsersModel.Games">
+            <EntityTypeMapping TypeName="SudokuUsersModel.Game">
               <MappingFragment StoreEntitySet="Games">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="DateFinish" ColumnName="DateFinish" />
+                <ScalarProperty Name="FinishTime" ColumnName="FinishTime" />
                 <ScalarProperty Name="Duration" ColumnName="Duration" />
                 <ScalarProperty Name="Level" ColumnName="Level" />
-                <ScalarProperty Name="Mistakes" ColumnName="Mistakes" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="SudokuUsersModel.Users">
+            <EntityTypeMapping TypeName="SudokuUsersModel.User">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="login" ColumnName="login" />
@@ -131,7 +127,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />

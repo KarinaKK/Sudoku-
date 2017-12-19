@@ -50,54 +50,55 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game.cs">
-      <DependentUpon>UserDatModel.tt</DependentUpon>
+      <DependentUpon>SudokuModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserDataRepository.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDatModel.Context.cs">
+    <Compile Include="SudokuModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserDatModel.Context.tt</DependentUpon>
+      <DependentUpon>SudokuModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserDatModel.cs">
+    <Compile Include="SudokuModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserDatModel.tt</DependentUpon>
+      <DependentUpon>SudokuModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserDatModel.Designer.cs">
+    <Compile Include="SudokuModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UserDatModel.edmx</DependentUpon>
+      <DependentUpon>SudokuModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>UserDatModel.tt</DependentUpon>
+      <DependentUpon>SudokuModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserCredentialsRepository.cs" />
+    <Compile Include="UserDataRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <EntityDeploy Include="UserDatModel.edmx">
+    <EntityDeploy Include="SudokuModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserDatModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>SudokuModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="UserDatModel.edmx.diagram">
-      <DependentUpon>UserDatModel.edmx</DependentUpon>
+    <None Include="SudokuModel.edmx.diagram">
+      <DependentUpon>SudokuModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="UserDatModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UserDatModel.Context.cs</LastGenOutput>
-      <DependentUpon>UserDatModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="UserDatModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserDatModel.edmx</DependentUpon>
-      <LastGenOutput>UserDatModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="SudokuModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SudokuModel.edmx</DependentUpon>
+      <LastGenOutput>SudokuModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SudokuModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SudokuModel.edmx</DependentUpon>
+      <LastGenOutput>SudokuModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,3 @@
-C:\Users\Taipo\Downloads\sudoku\SudokuRep\obj\Debug\SudokuRep.csprojResolveAssemblyReference.cache
 C:\Users\Taipo\Downloads\sudoku\SudokuRep\obj\Debug\SudokuRep.csproj.CoreCompileInputs.cache
 C:\Users\Taipo\Downloads\sudoku\SudokuRep\bin\Debug\SudokuRep.dll.config
 C:\Users\Taipo\Downloads\sudoku\SudokuRep\bin\Debug\SudokuRep.dll
@@ -9,3 +8,14 @@ C:\Users\Taipo\Downloads\sudoku\SudokuRep\bin\Debug\EntityFramework.xml
 C:\Users\Taipo\Downloads\sudoku\SudokuRep\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Taipo\Downloads\sudoku\SudokuRep\obj\Debug\SudokuRep.dll
 C:\Users\Taipo\Downloads\sudoku\SudokuRep\obj\Debug\SudokuRep.pdb
+C:\Users\Taipo\Downloads\sudoku\SudokuRep\obj\Debug\SudokuRep.csprojResolveAssemblyReference.cache
+C:\Users\sevam\OneDrive\Документы\немойпроект\sudoku\SudokuRep\bin\Debug\SudokuRep.dll.config
+C:\Users\sevam\OneDrive\Документы\немойпроект\sudoku\SudokuRep\bin\Debug\SudokuRep.dll
+C:\Users\sevam\OneDrive\Документы\немойпроект\sudoku\SudokuRep\bin\Debug\SudokuRep.pdb
+C:\Users\sevam\OneDrive\Документы\немойпроект\sudoku\SudokuRep\bin\Debug\EntityFramework.dll
+C:\Users\sevam\OneDrive\Документы\немойпроект\sudoku\SudokuRep\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sevam\OneDrive\Документы\немойпроект\sudoku\SudokuRep\bin\Debug\EntityFramework.xml
+C:\Users\sevam\OneDrive\Документы\немойпроект\sudoku\SudokuRep\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sevam\OneDrive\Документы\немойпроект\sudoku\SudokuRep\obj\Debug\SudokuRep.csprojResolveAssemblyReference.cache
+C:\Users\sevam\OneDrive\Документы\немойпроект\sudoku\SudokuRep\obj\Debug\SudokuRep.dll
+C:\Users\sevam\OneDrive\Документы\немойпроект\sudoku\SudokuRep\obj\Debug\SudokuRep.pdb

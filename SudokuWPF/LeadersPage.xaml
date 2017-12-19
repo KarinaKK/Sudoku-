@@ -1,11 +1,11 @@
-﻿<Window x:Class="SudokuWPF.LeadersPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SudokuWPF"
-        mc:Ignorable="d"
-        Title="LeadersPage" Height="300" Width="300">
+﻿<Page x:Class="SudokuWPF.LeadersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SudokuWPF"
+      mc:Ignorable="d"
+      Title="LeadersPage" Height="472.258" Width="570.968" Loaded="LeadersPage_OnLoaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"></RowDefinition>
@@ -17,11 +17,10 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <ListView
-                Grid.Row="1"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 Name="RaitingView"
-            ItemsSource="{Binding Users}">
+            ItemsSource="{Binding Raiting}" Margin="0,47,0,0" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Никнейм" Width="{Binding ElementName=RaitingLabel,Path=Width}" >
@@ -34,20 +33,20 @@
                     <GridViewColumn Header="Количество игр" Width="{Binding ElementName=RaitingLabel,Path=Width}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate >
-                                <TextBlock Text="{Binding gameCount}" Width="{Binding ElementName=RaitingLabel,Path=Width}"></TextBlock>
+                                <TextBlock Text="{Binding Count}" Width="{Binding ElementName=RaitingLabel,Path=Width}"></TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="Очки" Width="{Binding ElementName=RaitingLabel,Path=Width}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding userScore}" Width="{Binding ElementName=RaitingLabel,Path=Width}"></TextBlock>
+                                <TextBlock Text="{Binding Score}" Width="{Binding ElementName=RaitingLabel,Path=Width}"></TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Name="RaitingLabel" Grid.Column="1" Grid.Row="0" Content="Рейтинг" FontSize="24" FontWeight="Black" VerticalAlignment="Center"/>
+        <Label Name="RaitingLabel" Grid.Column="1" Grid.Row="0" Content="Рейтинг" FontSize="24" FontWeight="Black" VerticalAlignment="Top"/>
     </Grid>
-</Window>
+</Page>

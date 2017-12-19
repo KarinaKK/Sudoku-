@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Data.Entity.Validation;
+using System.Windows;
 using System.Windows.Controls;
 using SudokuRep;
 
@@ -10,11 +12,13 @@ namespace SudokuWPF
     public partial class RegistrationPage : Page
     {
         private AuthorizationWindow _authorizationWindow;
+        private UserCredentialsRepository _userCredentialsRepository;
 
         public RegistrationPage(AuthorizationWindow authorizationWindow)
-        {
+        {           
             InitializeComponent();
             _authorizationWindow = authorizationWindow;
+            _userCredentialsRepository = new UserCredentialsRepository();
         }
 
 
@@ -29,16 +33,16 @@ namespace SudokuWPF
                 if (!is_registred(user))
                 {
 
-                    //((_authorizationWindow.Owner as MainWindow).DataContext as SudokuModel)
+                    //
                     //((_authorizationWindow.Owner as MainWindow).DataContext as Budget).Save_Data();
-                    //(_authorizationWindow.Owner as MainWindow).GetCurrentUser = user;
-                    MessageBox.Show("Вы успешно зарегистрированы!", "\tРегистрация", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //(_authorizationWindow.Owner as MainWindow).GetCurrentUser = user;                   
+                        _userCredentialsRepository.AddOrUpdateUser(user);
+                    
+                        MessageBox.Show("Вы успешно зарегистрированы!", "\tРегистрация", MessageBoxButton.OK, MessageBoxImage.Information);
+                    ((_authorizationWindow.Owner as MainWindow).DataContext as SudokuModel).AuthUser = user;
                     _authorizationWindow.Close();
                 }
-                else
-                {
-                    MessageBox.Show("Пользователь с таким именем и фамилией уже зарегистрирован!", "Некорректный ввод", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
+               
             }
 
 
@@ -46,10 +50,12 @@ namespace SudokuWPF
 
         private bool is_registred(User user)
         {
-          if(true)
-                    MessageBox.Show("Пользователь с таким именем и фамилией уже зарегистрирован!", "Некорректный ввод",
-                        MessageBoxButton.OK, MessageBoxImage.Warning);
+            if (_userCredentialsRepository.CheckUserByName(user))
+            {
+                MessageBox.Show("Пользователь с таким никнеймом уже зарегистрирован!", "Некорректный ввод",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
                 return true;
+            }
             return false;
         }
         private bool Check_Fields()
@@ -59,6 +65,12 @@ namespace SudokuWPF
                 return false;                       
             if (!(Checker.check_text(TextboxPassword.Password, "Введите пароль!")))
                 return false;
+            if (TextboxPassword.Password.Length < 8)
+            {
+                MessageBox.Show("Минимальная длина пароля 8 символов!", "Некорректный ввод",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
             if (!(Checker.check_text(TextboxPasswordConfirm.Password, "Подтвердите пароль!")))
                 return false;
             if (TextboxPassword.Password != TextboxPasswordConfirm.Password)
@@ -70,4 +82,4 @@ namespace SudokuWPF
         }
     }
 }
-}
+

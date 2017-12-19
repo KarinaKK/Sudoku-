@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SudokuWPF"
         mc:Ignorable="d"
-        Title="Sudoku" Height="550" Width="725" >
+        Title="Судоку" Height="550" Width="725" 
+        DataContextChanged="MainWindow_OnDataContextChanged"
+        Closing="MainWindow_OnClosing"
+        Loaded="MainWindow_OnLoaded">
     <Window.DataContext>
         <local:SudokuModel></local:SudokuModel>
     </Window.DataContext>
@@ -20,20 +23,33 @@
             <ColumnDefinition Width="0.7*"></ColumnDefinition>
             <ColumnDefinition Width="0.3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.Column="1" Content="Вход и регистрация"  Width="200" Height="27" Margin="0,39,10,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
-        <Expander Grid.Row="0" Grid.Column="1" Visibility="Hidden" Header="Никнейм" HorizontalAlignment="Left" Height="78" Margin="247,42,0,10" >
+        <Label Name="AuthLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Авторизируйтесь для начала игры" FontSize="24"></Label>
+        <Button Grid.Row="0" Name="LogInButton"  Grid.Column="1" Content="Вход и регистрация"  Width="200" Height="27" Margin="0,39,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Login_Click"/>
+        <Expander Name="LogInExpander" Grid.Row="0" Grid.Column="1" Visibility="Hidden" Header="Никнейм" HorizontalAlignment="Right"  VerticalAlignment="Top" Margin="0,10,31,0" >
             <Grid Background="#FFE5E5E5">
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <Label Grid.Row="1" Content="Выйти"></Label>
-                <Label Grid.Row="0" Content="Сменить пароль"></Label>
+                <Label Content="Выйти" MouseLeftButtonUp="OnLogOutClick"></Label>
             </Grid>
         </Expander>
-        <Button Grid.Row="3" Grid.Column="1"  Content="Выход" Margin="0,0,60,30" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="145"/>
-        <Button Content="Новая игра" Grid.Row="1" Grid.Column="1" Margin="0,0,60,24" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="145" />
-        <Button Content="Настройки" Grid.Row="2" Margin="0,0,60,31" Grid.Column="1" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="145" />
-        <Frame Name="MainFrame" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3"></Frame>
+        <Button Grid.Row="3" Grid.Column="1" Click="OnExit" Content="Выход" Margin="0,0,60,30" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="145"/>
+        <Button Name="ButtonNg" Content="Новая игра" IsEnabled="False" Grid.Row="1" Click="NewGame_OnClick" Grid.Column="1" Margin="0,0,60,24" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="145" />
+        <Expander Name="SettingsExpander" IsEnabled="False" Grid.Row="2" Grid.Column="1" Visibility="Visible" Header="Настройки" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Margin="0,0,31,24" Width="174" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="59*"></ColumnDefinition>
+                    <ColumnDefinition Width="34*"></ColumnDefinition>
+                    <ColumnDefinition Width="27*"></ColumnDefinition>
+                    <ColumnDefinition Width="20*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Content="Уровень" VerticalContentAlignment="Top" Grid.Row="0" Grid.Column="0"></Label>
+                <RadioButton Name="L1RadioButton" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="1" Content="1"></RadioButton>
+                <RadioButton Name="L2RadioButton" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="2" Content="2"></RadioButton>
+                <RadioButton Name="L3RadioButton" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="3" Content="3"></RadioButton>
+            </Grid>
+        </Expander>
+        <Frame BorderBrush="Black" BorderThickness="0.1" Name="MainFrame" Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" />
     </Grid>
 </Window>

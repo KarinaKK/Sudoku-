@@ -26,9 +26,9 @@
         <Label Content="Никнейм" HorizontalAlignment="Left" Grid.Row="3" Margin="10,0,0,0"/>
         <Label Content="Пароль" Grid.Row="6"/>
         <Label Content="Подтвердите пароль" Grid.Row="8"></Label>
-        <TextBox Name="TextboxLogin" Grid.Row="4"/>
-        <PasswordBox Name="TextboxPassword" Grid.Row="7"/>
-        <PasswordBox Name="TextboxPasswordConfirm" Grid.Row="9"/>
+        <TextBox VerticalContentAlignment="Center" Name="TextboxLogin" Grid.Row="4"/>
+        <PasswordBox VerticalContentAlignment="Center" Name="TextboxPassword" Grid.Row="7"/>
+        <PasswordBox VerticalContentAlignment="Center" Name="TextboxPasswordConfirm" Grid.Row="9"/>
         <Button Name="ButtonReg" Content="Регистрация" Click="ButtonBase_OnClick" Grid.Row="9" Margin="0,54,20,-49" HorizontalAlignment="Right" Width="80"/>
 
     </Grid>
