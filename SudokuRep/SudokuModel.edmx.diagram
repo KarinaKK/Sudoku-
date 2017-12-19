@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ecd2a0122e424a649b1b3fb5f67052cc" Name="Diagram1">
-        <EntityTypeShape EntityType="SudokuUsersModel.Games" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SudokuUsersModel.Users" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+      <Diagram DiagramId="835e1c9bf84041aabe9a85e04dd40ecb" Name="Diagram1">
+        <EntityTypeShape EntityType="SudokuUsersModel.Game" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SudokuUsersModel.User" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <AssociationConnector Association="SudokuUsersModel.FK_Games_ToUsers" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

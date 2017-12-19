@@ -10,213 +10,38 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.8*"></ColumnDefinition>
             <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition Width="0.8*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"></RowDefinition>
             <RowDefinition Height="0.8*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Name="SudokuGrid" Grid.Column="0" Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+        <Button Name="CheckButton" Click="CheckButton_OnClick" Content="Проверить" Grid.Column="0" Grid.Row="1" Height="38" VerticalAlignment="Top" Margin="0,31,0,0"/>
+        <Label Name="LevelLabel" Content="Уровень" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+        <Grid Name="SudokuGrid" Grid.Column="1" Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Grid.Column="0">
             <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <TextBox Grid.Row="0" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-                <TextBox Grid.Row="0" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-                <TextBox Grid.Row="0" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            </Grid>
-        <Grid Grid.Row="0" Grid.Column="1">
-            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-        </Grid>
-        <Grid Grid.Row="0" Grid.Column="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-        </Grid>
-        <Grid Grid.Row="1" Grid.Column="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-        </Grid>
-        <Grid Grid.Row="1" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-        </Grid>
-        <Grid Grid.Row="1" Grid.Column="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-        </Grid>
-        <Grid Grid.Row="2" Grid.Column="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-        </Grid>
-        <Grid Grid.Row="2" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-        </Grid>
-        <Grid Grid.Row="2" Grid.Column="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="0" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="0" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" BorderBrush="Red" BorderThickness="1"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="2" BorderBrush="Red" BorderThickness="1"></TextBox>
-        </Grid>
         </Grid>
     </Grid>
 </Page>

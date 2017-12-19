@@ -16,10 +16,10 @@ namespace SudokuRep
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public System.DateTime DateFinish { get; set; }
-        public Nullable<int> Duration { get; set; }
+        public System.DateTime FinishTime { get; set; }
+        public System.DateTime StartTime { get; set; }
         public int Level { get; set; }
-        public Nullable<float> Mistakes { get; set; }
+        public Nullable<float> duration { get; set; }
     
         public virtual User User { get; set; }
     }
